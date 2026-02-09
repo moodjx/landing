@@ -19,7 +19,7 @@
    */
 
   import { onMount, onDestroy } from "svelte";
-  import { NAV_SECTIONS, SOCIAL_LINKS } from "../../lib/constants.js";
+  import { NAV_SECTIONS, SOCIAL_LINKS, FEATURES } from "../../lib/constants.js";
   import { scrollToSection } from "../../lib/utils.js";
   import { createScrollSpy } from "../../lib/scrollSpy.svelte.js";
   import { translations } from "../../lib/translations.js";
@@ -265,17 +265,19 @@
         >
           <span style="font-size: 24px;">🇬🇧</span>
         </button>
-        <button
-          class="flag-btn"
-          class:active={currentLang === "de"}
-          onclick={(e) => {
-            e.stopPropagation();
-            setLang("de");
-          }}
-          aria-label="Switch to German"
-        >
-          <span style="font-size: 24px;">🇩🇪</span>
-        </button>
+        {#if FEATURES.ENABLE_GERMAN}
+          <button
+            class="flag-btn"
+            class:active={currentLang === "de"}
+            onclick={(e) => {
+              e.stopPropagation();
+              setLang("de");
+            }}
+            aria-label="Switch to German"
+          >
+            <span style="font-size: 24px;">🇩🇪</span>
+          </button>
+        {/if}
       </div>
     </div>
 

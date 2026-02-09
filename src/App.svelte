@@ -21,6 +21,8 @@
   // CONSTANTS
   // ============================================================================
 
+  import { FEATURES } from "./lib/constants.js";
+
   const BASE_PATH = "";
 
   // ============================================================================
@@ -91,8 +93,12 @@
     // Handle /:lang/:page
     if (segments.length >= 1) {
       const lang = segments[0];
-      if (lang === "en" || lang === "de") {
+      if (lang === "en" || (lang === "de" && FEATURES.ENABLE_GERMAN)) {
         currentLang = lang;
+      } else if (lang === "de" && !FEATURES.ENABLE_GERMAN) {
+        // Redirect to English if German is disabled
+        navigate(`/en/${segments[1] || "home"}`);
+        return;
       }
 
       if (segments.length >= 2) {
@@ -113,6 +119,7 @@
    * Changes the language
    */
   function setLang(lang) {
+    if (lang === "de" && !FEATURES.ENABLE_GERMAN) return;
     navigate(`/${lang}/${currentPage}`);
   }
 

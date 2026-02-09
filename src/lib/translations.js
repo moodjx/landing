@@ -16,8 +16,8 @@ export const translations = {
             resume: "Download Resume"
         },
         typewriter: {
-            text: "Your idea and vision into viable products that customers love ",
-            subtext: "I help you scale your project using tested and proven technologies. Turning your ideas into good designed and wellthought products across the board."
+            text: "Let the code translate your ideas into successful products",
+            subtext: "I help you scale your project using tested and proven technologies. With a track record of professional work as a developer, I focus on delivering industry grade level products."
         },
         quality: {
             title: "Commitment to Excellence",
@@ -27,8 +27,8 @@ export const translations = {
             security: { title: "Security", text: "Secure practices." }
         },
         cards: {
-            iot: { title: "IoT Product Development", desc: "Connecting physical devices to the digital world with real-time data processing and embedded systems." },
-            saas: { title: "SaaS Product Development", desc: "Building scalable cloud-based software solutions with modern architectures and best practices." },
+            iot: { title: "IoT Product Development", desc: "Connecting physical devices to the digital world with real-time data processing on a wide range of embedded systems." },
+            saas: { title: "SaaS Solutions", desc: "Building scalable cloud-based software solutions with modern architectures and best practices." },
             pm: { title: "Project Management & Technical Leadership", desc: "Leading development teams, managing complex projects, and delivering results with proven expertise." }
         },
         contactCta: {
