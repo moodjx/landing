@@ -8,22 +8,21 @@ This guide explains the architecture, patterns, and best practices used in this 
 portfolio-2/
 ├── src/
 │   ├── components/          # Svelte components (UI sections)
-│   │   ├── About.svelte
-│   │   ├── Blog.svelte
-│   │   ├── Contact.svelte
-│   │   ├── Experience.svelte
-│   │   ├── FeaturedProjects.svelte
-│   │   ├── Footer.svelte
-│   │   ├── Hero.svelte
-│   │   ├── Navigation.svelte
-│   │   └── TechStack.svelte
+│   │   ├── blog/            # Blog related components
+│   │   ├── common/          # Shared components (Footer, Navigation, etc.)
+│   │   ├── contact/         # Contact page components
+│   │   ├── experience/      # Experience page components
+│   │   ├── home/            # Home page components
+│   │   └── projects/        # Projects page components
+│   ├── pages/               # Page views (Home, Experience, Contact, etc.)
 │   ├── lib/                 # Utilities and constants
-│   │   ├── constants.js     # All static data (DRY principle)
-│   │   ├── posts.js         # Blog post utilities
+│   │   ├── constants.js     # All static data (DRY principle) & Feature Flags
+│   │   ├── icons.js         # SVG icons
 │   │   ├── scrollSpy.svelte.js  # Scroll tracking
+│   │   ├── translations.js  # Translation strings
 │   │   └── utils.js         # Helper functions
 │   ├── posts/               # Markdown blog posts
-│   ├── App.svelte           # Root component
+│   ├── App.svelte           # Root component & Routing Logic
 │   ├── app.css              # Global styles
 │   └── main.js              # Entry point
 ├── public/                  # Static assets
@@ -44,10 +43,9 @@ All static data is centralized in `src/lib/constants.js`:
 **Why?** Update content in one place, changes reflect everywhere.
 
 ### 2. **Single Responsibility Principle (SOLID)**
-Each component has one clear purpose:
-- `Hero.svelte` - Landing section only
-- `Navigation.svelte` - Navigation only
-- `Contact.svelte` - Contact form only
+Each component has one clear purpose. For example:
+- `pages/Home.svelte` - Orchestrates the home page layout
+- `components/common/Navigation.svelte` - Handles navigation interaction only
 
 **Why?** Easier to maintain, test, and understand.
 
@@ -56,66 +54,35 @@ Each component has one clear purpose:
 - **Logic** → `lib/utils.js`, `lib/scrollSpy.svelte.js`
 - **Presentation** → Component files
 - **Styles** → Scoped in components or `app.css`
+- **Content** → `lib/translations.js`
 
 **Why?** Changes to one layer don't affect others.
 
-### 4. **Modularity**
-Reusable utilities:
-- `scrollToSection()` - Smooth scrolling
-- `formatDate()` - Date formatting
-- `createScrollSpy()` - Scroll tracking
-
-**Why?** Write once, use everywhere.
-
 ## 🔧 Key Features
+
+### Custom Routing
+The application uses a custom client-side router implemented in `App.svelte` instead of a library or meta-framework router.
+
+**How it works:**
+1. Intercepts navigation events and URL changes.
+2. Updates `currentPage` and `currentLang` state based on the URL path (e.g., `/en/home`).
+3. Uses the History API (`pushState`, `replaceState`) to manage browser history without page reloads.
+4. Renders the appropriate component from `src/pages/` based on `currentPage`.
+
+### Internationalization (i18n)
+Multi-language support is built-in.
+
+- **Strings:** Stored in `src/lib/translations.js` nested by language code (`en`, `de`).
+- **State:** `currentLang` state in `App.svelte` determines which set of strings to use.
+- **Usage:** Components receive `currentLang` as a prop and access text via `translations[currentLang].section.key`.
+- **Feature Flag:** German language support can be toggled via `FEATURES.ENABLE_GERMAN` in `constants.js`.
 
 ### Scroll Spy Navigation
 The navigation automatically highlights the current section as you scroll.
 
-**How it works:**
-1. `scrollSpy.svelte.js` uses Intersection Observer API
-2. Tracks which section is in viewport
-3. Updates `activeSection` state
-4. Navigation highlights active section
-
 **Files involved:**
-- `src/lib/scrollSpy.svelte.js` - Core logic
-- `src/components/Navigation.svelte` - UI implementation
-
-### Smooth Scrolling
-Clicking navigation links smoothly scrolls to sections.
-
-**Implementation:**
-```javascript
-// src/lib/utils.js
-export function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId);
-  if (element) {
-    element.scrollIntoView({ 
-      behavior: 'smooth',
-      block: 'start'
-    });
-  }
-}
-```
-
-### Responsive Design
-Mobile-first approach with breakpoints at 768px.
-
-**Pattern:**
-```css
-/* Desktop styles first */
-.component {
-  /* Desktop layout */
-}
-
-/* Mobile overrides */
-@media (max-width: 768px) {
-  .component {
-    /* Mobile layout */
-  }
-}
-```
+- `src/lib/scrollSpy.svelte.js` - Core logic using Intersection Observer.
+- `src/components/common/Navigation.svelte` - UI implementation.
 
 ## 📝 Svelte 5 Features Used
 
@@ -151,9 +118,6 @@ New syntax in Svelte 5:
 
 ### 3. **Component Mounting**
 ```javascript
-// Old (Svelte 4)
-new App({ target: document.getElementById('app') });
-
 // New (Svelte 5)
 import { mount } from 'svelte';
 mount(App, { target: document.getElementById('app') });
@@ -165,192 +129,41 @@ mount(App, { target: document.getElementById('app') });
 - **Bold borders** (3px)
 - **Sharp shadows** (no blur)
 - **Bright colors**
-- **No border-radius**
 - **High contrast**
 
 ### CSS Variables
-All design tokens in `app.css`:
-```css
-:root {
-  --color-primary: #FF6B6B;
-  --color-secondary: #FFE66D;
-  --space-md: 1rem;
-  --border-width: 3px;
-  /* ... */
-}
-```
-
-**Why?** Easy to theme and maintain consistency.
-
-### Scoped Styles
-Each component has its own `<style>` block:
-```svelte
-<style>
-  /* These styles only apply to this component */
-  .hero {
-    /* ... */
-  }
-</style>
-```
+All design tokens in `app.css`.
 
 ## 🔄 Data Flow
 
 ```
-constants.js (Data Source)
+constants.js / translations.js
     ↓
-Component (Imports data)
+App.svelte (Manages State & Routing)
     ↓
-Template (Renders data)
+Page Component (e.g., Home.svelte)
     ↓
-User sees content
-```
-
-**Example:**
-```javascript
-// constants.js
-export const TECHNOLOGIES = [
-  { name: 'React', category: 'Frontend' }
-];
-
-// TechStack.svelte
-import { TECHNOLOGIES } from '../lib/constants.js';
-
-{#each TECHNOLOGIES as tech}
-  <div>{tech.name}</div>
-{/each}
+Child Component (e.g., Hero.svelte)
 ```
 
 ## 📚 Adding Content
 
-### Add a Blog Post
-1. Create `src/posts/my-post.md`
-2. Add frontmatter:
-```markdown
----
-title: My Post Title
-date: 2024-11-15
-author: Mohamed Jridi
-tags: [Tag1, Tag2]
-excerpt: Brief description
----
+### Add a Project or Experience
+Edit `src/lib/constants.js`. The arrays `PROJECTS` and `EXPERIENCES` feed the components directly.
 
-# Content here...
-```
-3. Post automatically appears in blog!
-
-### Add a Project
-Edit `src/lib/constants.js`:
-```javascript
-export const PROJECTS = [
-  {
-    title: 'My Project',
-    description: 'Description here',
-    technologies: ['React', 'Node.js'],
-    github: 'https://github.com/...',
-    demo: 'https://demo.com'
-  }
-];
-```
-
-### Add a Technology
-Edit `src/lib/constants.js`:
-```javascript
-export const TECHNOLOGIES = [
-  { name: 'New Tech', category: 'Frontend' }
-];
-```
-
-## 🧪 Best Practices
-
-### 1. **Always Comment**
-Every component has:
-- File-level comment explaining purpose
-- Section comments for major blocks
-- Inline comments for complex logic
-
-### 2. **Use Constants**
-Never hardcode data in components:
-```javascript
-// ❌ Bad
-const tech = 'React';
-
-// ✅ Good
-import { TECHNOLOGIES } from '../lib/constants.js';
-```
-
-### 3. **Semantic HTML**
-Use proper HTML elements:
-```html
-<!-- ✅ Good -->
-<section id="about">
-  <h2>About Me</h2>
-  <p>Content...</p>
-</section>
-
-<!-- ❌ Bad -->
-<div id="about">
-  <div class="title">About Me</div>
-  <div>Content...</div>
-</div>
-```
-
-### 4. **Accessibility**
-- Use `aria-label` for icon buttons
-- Include `alt` text for images
-- Use semantic HTML
-- Ensure keyboard navigation works
+### Add a Translation
+Edit `src/lib/translations.js` and add the new key path to both `en` and `de` objects.
 
 ## 🚀 Deployment
 
 ### GitHub Pages
-1. Update `vite.config.js` base path to match your repo name
-2. Push to GitHub
-3. Enable GitHub Pages in repo settings
-4. Select "GitHub Actions" as source
-5. Site deploys automatically on push to main
-
-### Environment Variables
-For production, update:
-- `CONTACT_FORM_ENDPOINT` in `constants.js`
-- `SOCIAL_LINKS` in `constants.js`
-- Base path in `vite.config.js`
-
-## 🐛 Debugging
-
-### Common Issues
-
-**Scroll spy not working?**
-- Check section IDs match `NAV_SECTIONS` in constants
-- Ensure sections have `id` attribute
-- Check browser console for errors
-
-**Styles not applying?**
-- Check CSS variable names
-- Verify scoped styles aren't conflicting
-- Clear browser cache
-
-**Build errors?**
-- Run `npm install` to ensure dependencies are installed
-- Check for syntax errors in components
-- Verify all imports are correct
-
-## 📖 Learning Resources
-
-- [Svelte 5 Documentation](https://svelte.dev/docs/svelte/overview)
-- [Svelte 5 Runes](https://svelte.dev/docs/svelte/what-are-runes)
-- [Vite Documentation](https://vitejs.dev/)
-- [MDN Web Docs](https://developer.mozilla.org/)
+1. Update `vite.config.js` base path if necessary.
+2. Build with `npm run build`.
+3. Deploy the `dist` folder.
 
 ## 🤝 Contributing
 
 When making changes:
-1. Follow existing code style
-2. Add comments for complex logic
-3. Update constants instead of hardcoding
-4. Test on mobile and desktop
-5. Check accessibility
-
----
-
-**Remember:** This portfolio is designed for easy maintenance. All content updates should happen in `src/lib/constants.js` or `src/posts/`. Component logic should rarely need changes.
-
+1. Follow existing code style.
+2. Update constants/translations instead of hardcoding text.
+3. Test on mobile and desktop.
