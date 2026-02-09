@@ -1,0 +1,93 @@
+/**
+ * LIGHT MODE THEME - VAPORWAVE PASTEL
+ * Neo-brutalism mixed with soft vaporwave aesthetic
+ * Features: Pastel colors, soft gradients, retro-futuristic feel
+ * This theme is used when user explicitly prefers light mode
+ */
+
+:root {
+  /* Color Scheme - Neo-Brutalism with Deep Blue */
+  --color-bg: #f5f3ed; /* Dirty white background */
+  --color-text: #000000; /* Black text */
+  --color-primary: #1E3A8A; /* Deep Blue - primary accent */
+  --color-secondary: #FBBF24; /* Bright Yellow - secondary accent */
+  --color-accent: #10B981; /* Emerald Green - accent */
+  --color-danger: #EF4444; /* Bright Red - for emphasis */
+  --color-purple: #8B5CF6; /* Violet - additional accent */
+  --color-border: #000000; /* Black borders */
+  --color-shadow: #000000; /* Black shadow */
+  --color-nav-hero: #f5f3ed; /* Dirty white background for nav and hero */
+  --color-card-bg: #f5f3ed; /* Dirty white cards */
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Typography */
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  /* Border - Reduced thickness for softer look */
+  --border-width: 2px;
+  --border-radius: 8px; /* Rounded corners for buttons */
+
+  /* Shadow - Soft colored shadows */
+  --shadow-sm: 4px 4px 0 var(--color-shadow);
+  --shadow-md: 6px 6px 0 var(--color-shadow);
+  --shadow-lg: 8px 8px 0 var(--color-shadow);
+
+  /* Glow effects for vaporwave aesthetic */
+  --glow-sm: 0 0 5px rgba(167, 139, 250, 0.3);
+  --glow-md: 0 0 10px rgba(167, 139, 250, 0.4);
+  --glow-lg: 0 0 15px rgba(255, 110, 199, 0.4);
+}
+
+/* Light mode neo-brutalism overrides */
+.card {
+  background: var(--color-card-bg) !important;
+  border-color: var(--color-border) !important;
+  box-shadow: var(--shadow-md) !important;
+}
+
+.card:hover {
+  box-shadow: 8px 8px 0 var(--color-shadow) !important;
+  transform: translate(-2px, -2px);
+}
+
+input, textarea {
+  background: var(--color-card-bg) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-border) !important;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 4px 4px 0 var(--color-shadow) !important;
+  border-color: var(--color-primary) !important;
+}
+
+/* Description text */
+.description {
+  color: #333333 !important;
+}
+
+.section-subtitle {
+  color: #666666 !important;
+}
+
+/* Tags with neo-brutal colors */
+.tag {
+  background: var(--color-card-bg) !important;
+  border-color: var(--color-border) !important;
+  color: var(--color-text) !important;
+}
+
+/* Highlight effect with deep blue */
+.highlight::after {
+  background: var(--color-secondary) !important;
+  opacity: 0.5;
+}
+

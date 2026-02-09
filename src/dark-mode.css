@@ -1,0 +1,278 @@
+/**
+ * DARK MODE THEME - DISABLED
+ * This file is no longer used.
+ * The portfolio now uses light mode only.
+ * Keeping this file for potential future use.
+ */
+
+:root {
+  /* Color Scheme - Cyberpunk Vaporwave Dark Mode */
+  --color-bg: #0a0e27; /* Deep dark blue-black background */
+  --color-text: #e0e7ff; /* Soft light blue-white text */
+  --color-primary: #ff006e; /* Hot pink/magenta - cyberpunk accent */
+  --color-secondary: #8338ec; /* Electric purple */
+  --color-accent: #00f5ff; /* Bright cyan */
+  --color-success: #06ffa5; /* Neon green */
+  --color-border: #00f5ff; /* Cyan borders */
+  --color-shadow: rgba(0, 0, 0, 0.5); /* Simple dark shadow */
+  --color-nav-hero: #1E3A8A; /* Deep Blue (Ocean) for nav and hero */
+
+  /* Additional Vaporwave Colors */
+  --color-pink: #ff006e;
+  --color-purple: #8338ec;
+  --color-cyan: #00f5ff;
+  --color-blue: #3a86ff;
+  --color-card-bg: #151932; /* Slightly lighter than main bg */
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Typography */
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+
+  /* Border - Reduced thickness for softer look */
+  --border-width: 2px;
+  --border-radius: 8px; /* Rounded corners for buttons */
+
+  /* Shadow - Simple shadows without glow */
+  --shadow-sm: 4px 4px 0 var(--color-shadow);
+  --shadow-md: 6px 6px 0 var(--color-shadow);
+  --shadow-lg: 8px 8px 0 var(--color-shadow);
+}
+
+/* Dark mode specific overrides for cyberpunk vaporwave aesthetic */
+.card {
+  background: var(--color-card-bg) !important;
+  border-color: var(--color-cyan) !important;
+  box-shadow: var(--shadow-md) !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card:hover {
+  box-shadow: 8px 8px 0 var(--color-shadow) !important;
+  transform: translate(-2px, -2px);
+}
+
+input, textarea {
+  background: var(--color-card-bg) !important;
+  color: var(--color-text) !important;
+  border-color: var(--color-purple) !important;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 4px 4px 0 var(--color-shadow) !important;
+  border-color: var(--color-cyan) !important;
+}
+
+/* Adjust description text color for better contrast in dark mode */
+.description {
+  color: #b8c5e0 !important;
+}
+
+.section-subtitle {
+  color: #8b9dc3 !important;
+}
+
+/* Button styles without glow */
+.btn {
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 6px 6px 0 var(--color-shadow) !important;
+}
+
+/* Tags without glow */
+.tag {
+  background: var(--color-card-bg) !important;
+  border-color: var(--color-purple) !important;
+  color: var(--color-cyan) !important;
+}
+
+/* Highlight effect with gradient */
+.highlight::after {
+  background: linear-gradient(90deg, var(--color-pink), var(--color-purple)) !important;
+}
+
+/* ============================================================================
+   CYBERPUNK VAPORWAVE ENHANCEMENTS
+   Clean visual effects without glowing
+   ============================================================================ */
+
+/* Navigation bar with Deep Blue background */
+.nav {
+  background: transparent !important; /* Transparent wrapper for floating card */
+  border: none !important;
+}
+
+/* Navigation content card with Deep Blue background */
+.nav-content {
+  background: var(--color-nav-hero) !important;
+  border-color: var(--color-cyan) !important;
+}
+
+/* Hero section with Deep Blue background */
+.hero {
+  background: var(--color-nav-hero) !important;
+  position: relative;
+}
+
+/* Add subtle grid pattern overlay for cyberpunk feel */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 255, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure hero content is above the grid */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Links hover effect */
+a:hover {
+  color: var(--color-cyan) !important;
+}
+
+/* Logo styling - plain text, no background */
+.logo {
+  background: transparent !important;
+  border: none !important;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  transform: translateY(-2px) !important;
+}
+
+.logo-text {
+  color: white !important;
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: unset !important;
+  background-clip: unset !important;
+}
+
+/* Bold part of logo text */
+.logo-text strong {
+  font-weight: 900 !important;
+}
+
+/* Navigation buttons hover */
+.nav-links button:hover {
+  color: var(--color-cyan) !important;
+}
+
+.nav-links button.active {
+  color: var(--color-pink) !important;
+  border-bottom: 2px solid var(--color-pink);
+}
+
+/* Image wrapper styling */
+.image-wrapper::before {
+  background: linear-gradient(135deg, var(--color-pink), var(--color-purple)) !important;
+  border-color: var(--color-cyan) !important;
+}
+
+.image-wrapper img {
+  border-color: var(--color-cyan) !important;
+  box-shadow: 8px 8px 0 var(--color-shadow) !important;
+}
+
+/* Section backgrounds with subtle gradients */
+.section {
+  position: relative;
+}
+
+/* Alternating section backgrounds for depth */
+.about, .tech-stack, .contact {
+  background: var(--color-bg) !important;
+}
+
+.projects, .experience {
+  background: linear-gradient(180deg, var(--color-bg) 0%, #0f1229 100%) !important;
+}
+
+/* Animated gradient for primary buttons */
+.btn:not(.btn-outline):not(.btn-accent) {
+  background: linear-gradient(135deg, var(--color-pink), var(--color-purple)) !important;
+  border-color: var(--color-cyan) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:not(.btn-outline):not(.btn-accent)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:not(.btn-outline):not(.btn-accent):hover::before {
+  left: 100%;
+}
+
+/* Accent button */
+.btn-accent {
+  background: var(--color-accent) !important;
+  color: var(--color-bg) !important;
+  border-color: var(--color-cyan) !important;
+}
+
+.btn-accent:hover {
+  box-shadow: 6px 6px 0 var(--color-shadow) !important;
+  color: var(--color-bg) !important;
+}
+
+/* Outline button */
+.btn-outline {
+  border-color: var(--color-purple) !important;
+  color: var(--color-purple) !important;
+}
+
+.btn-outline:hover {
+  background: rgba(131, 56, 236, 0.1) !important;
+  box-shadow: 6px 6px 0 var(--color-shadow) !important;
+  color: var(--color-purple) !important;
+}
+
+/* Scrollbar styling for cyberpunk aesthetic */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+  border-left: 2px solid var(--color-cyan);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--color-pink), var(--color-purple));
+  border: 2px solid var(--color-cyan);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, var(--color-purple), var(--color-pink));
+}
+

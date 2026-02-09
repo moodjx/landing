@@ -1,0 +1,443 @@
+/* Font Faces */
+/* Font Faces */
+
+/* Gantari */
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-ThinItalic.otf') format('opentype');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-ExtraLight.otf') format('opentype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-ExtraLightItalic.otf') format('opentype');
+  font-weight: 200;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-LightItalic.otf') format('opentype');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Italic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-MediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-SemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-SemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-BoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-ExtraBold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-ExtraBoldItalic.otf') format('opentype');
+  font-weight: 800;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-Black.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gantari';
+  src: url('/fonts/Gantari/Gantari-BlackItalic.otf') format('opentype');
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* NeutralSans removed */
+
+/* Hyperwave Display */
+@font-face {
+  font-family: 'Hyperwave Display';
+  src: url('/fonts/Hyperwave Display.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Premium Monochromatic Dark Theme (Linear/Vercel inspired) */
+:root {
+  /* Colors - Premium Light Theme */
+  --color-bg: #FAFAFA;
+  /* Zinc-50 / Alabaster - Soft Off-White */
+  --color-text: #09090b;
+  /* Zinc-950 for primary text */
+  --color-primary: #000000;
+  /* Black for high contrast actions/highlights */
+  --color-secondary: #52525b;
+  /* Zinc-600 for secondary text */
+  --color-accent: #f4f4f5;
+  /* Zinc-100 for backgrounds/borders/accents */
+  --color-danger: #EF4444;
+  /* Modern Red */
+  --color-purple: #52525b;
+  /* Reusing Gray for consistency */
+  --color-border: #e4e4e7;
+  /* Zinc-200 */
+  --color-shadow: rgba(0, 0, 0, 0.05);
+  /* Subtle shadow */
+  --color-nav-hero: rgba(255, 255, 255, 0.8);
+  /* Glassy Light Background */
+  --color-card-bg: #FFFFFF;
+  /* Pure White for cards to pop against off-white bg */
+  --color-text-light: #52525b;
+  /* Zinc-600 */
+  --color-success: #10B981;
+  /* Emerald Green */
+
+  /* Spacing */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  /* Modern Sans */
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Modern Mono */
+  /* Keep existing custom fonts available */
+  --font-klory: 'KLORY', sans-serif;
+  --font-trailfree: 'TrailFree', sans-serif;
+  --font-agudisplay: 'AguDisplay-Uzo', sans-serif;
+  --font-grosventre: 'GrosVentre', sans-serif;
+  --font-orbix: 'Orbix', sans-serif;
+  --font-roundex: 'Roundex', sans-serif;
+  --font-simplexsans: 'SimplexSans', sans-serif;
+  --font-tmt: 'TMT-ThatThenThis', sans-serif;
+  --font-hyperwave: 'Hyperwave Display', sans-serif;
+  --font-gantari: 'Gantari', sans-serif;
+  --font-neutralsans: 'NeutralSans', sans-serif;
+
+  /* Border - Quantum/Modernism: Fine lines */
+  --border-width: 1px;
+  --border-radius: 4px;
+  /* Slightly rounded for modern feel */
+
+  /* Shadow - Soft Glows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  line-height: 1.2;
+  margin-bottom: var(--space-sm);
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  /* Reduced for compact feel */
+}
+
+h2 {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  /* Reduced for compact feel */
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+  /* Reduced for compact feel */
+}
+
+p {
+  margin-bottom: var(--space-sm);
+  font-size: 1rem;
+  /* Reduced from 1.125rem for compact feel */
+}
+
+a {
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-primary);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.section {
+  padding: var(--space-2xl) 0;
+}
+
+/* Card Component */
+.card {
+  background: rgba(10, 10, 10, 0.6);
+  border: 1px solid var(--color-border);
+  padding: var(--space-lg);
+  box-shadow: none;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
+}
+
+/* Button Component */
+.btn {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--color-border);
+  border-radius: 0;
+  background: transparent;
+  color: var(--color-text);
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  font-family: var(--font-mono);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  border-color: var(--color-secondary);
+}
+
+.btn-accent {
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: var(--color-text);
+}
+
+.btn-accent:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-text);
+}
+
+/* Tag Component */
+.tag {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  font-size: 0.875rem;
+  font-weight: 700;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: calc(var(--border-radius) / 2);
+  /* Slightly rounded corners */
+  background: var(--color-accent);
+  margin-right: var(--space-xs);
+  margin-bottom: var(--space-xs);
+}
+
+/* Grid System */
+.grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.grid-3 {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Input Component */
+input,
+textarea {
+  width: 100%;
+  padding: var(--space-sm);
+  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  background: transparent;
+  color: var(--color-text);
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-bottom-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.02);
+  box-shadow: none;
+  transform: none;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: slideInUp 0.6s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-xl) 0;
+  }
+
+  .card {
+    padding: var(--space-md);
+  }
+}
