@@ -6,6 +6,7 @@
      */
 
     import { translations } from "../../lib/translations.js";
+    import { getAssetPath } from "../../lib/utils.js";
 
     let { currentLang = "en" } = $props();
     let currentCardIndex = $state(0);
@@ -14,17 +15,17 @@
         {
             title: translations[currentLang].cards.iot.title,
             desc: translations[currentLang].cards.iot.desc,
-            image: "/img/iot-frame.png",
+            image: getAssetPath("/img/iot-frame.png"),
         },
         {
             title: translations[currentLang].cards.saas.title,
             desc: translations[currentLang].cards.saas.desc,
-            image: "/img/saas-pic.png",
+            image: getAssetPath("/img/saas-pic.png"),
         },
         {
             title: translations[currentLang].cards.pm.title,
             desc: translations[currentLang].cards.pm.desc,
-            image: "/img/pm-picture.png",
+            image: getAssetPath("/img/pm-picture.png"),
         },
     ]);
 

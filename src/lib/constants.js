@@ -122,14 +122,14 @@ export const EXPERIENCES = [
   {
     title: 'Lead Software Engineer',
     company: 'Livello GmbH',
-    period: '11/2023 - 08/2024',
+    period: '09/2023 - 08/2024',
     description: 'Led a team of 5 developers in developing and modernizing a full-stack (Python, Java, JS/TS), cloud-to-edge product. Drove key initiatives that expanded market presence and solidified technical foundation. Managed agile process, led BDD adoption, modernized legacy systems, achieved international payment gateway certification, and engineered RFID Electronic Shelf Label system. Slashed technical debt by 90% and automated infrastructure with CI/CD pipelines.',
     technologies: ['Python', 'Java', 'TypeScript', 'Docker', 'Kubernetes', 'Ansible', 'BDD', 'CI/CD', 'RFID', 'IoT']
   },
   {
     title: 'Software Engineer - IoT',
     company: 'Livello GmbH',
-    period: '04/2022 - 10/2023',
+    period: '04/2022 - 08/2023',
     description: 'Engineered and modernized a cloud-edge platform with scalable architecture and high-reliability systems for secure IoT data. Designed event-driven architecture using async Python and Vert.x. Orchestrated full migration from Google IoT Core to ClearBlade with zero downtime. Built automated device provisioning system using Ansible. Implemented ZVT and MDB payment protocols. Deployed comprehensive monitoring stack using Prometheus and Grafana.',
     technologies: ['Python', 'Java', 'JavaScript', 'Vert.x', 'Ansible', 'GCP', 'ClearBlade', 'Prometheus', 'Grafana', 'MQTT', 'IoT']
   }
@@ -196,7 +196,6 @@ export const INTERESTS = [
 export const SOCIAL_LINKS = {
   github: 'https://github.com/moodjx',
   linkedin: 'https://linkedin.com/in/medjridi',
-  x: 'https://x.com/mooditch', // Placeholder based on username
   upwork: 'https://www.upwork.com/freelancers/~019215513e3274a1b6', // TODO: Update with your actual Upwork profile URL
   freelancer: 'https://www.freelancer.com/u/medjridi' // Placeholder based on username
 };

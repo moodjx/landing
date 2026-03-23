@@ -4,126 +4,126 @@
 /* Gantari */
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Thin.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Thin.otf') format('opentype');
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-ThinItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-ThinItalic.otf') format('opentype');
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-ExtraLight.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-ExtraLight.otf') format('opentype');
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-ExtraLightItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-ExtraLightItalic.otf') format('opentype');
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Light.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-LightItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-LightItalic.otf') format('opentype');
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Regular.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Regular.otf') format('opentype');
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Italic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Italic.otf') format('opentype');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Medium.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-MediumItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-MediumItalic.otf') format('opentype');
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-SemiBold.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-SemiBold.otf') format('opentype');
   font-weight: 600;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-SemiBoldItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-SemiBoldItalic.otf') format('opentype');
   font-weight: 600;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Bold.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Bold.otf') format('opentype');
   font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-BoldItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-BoldItalic.otf') format('opentype');
   font-weight: 700;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-ExtraBold.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-ExtraBold.otf') format('opentype');
   font-weight: 800;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-ExtraBoldItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-ExtraBoldItalic.otf') format('opentype');
   font-weight: 800;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-Black.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-Black.otf') format('opentype');
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gantari';
-  src: url('/fonts/Gantari/Gantari-BlackItalic.otf') format('opentype');
+  src: url('./assets/fonts/Gantari/Gantari-BlackItalic.otf') format('opentype');
   font-weight: 900;
   font-style: italic;
 }
@@ -133,7 +133,7 @@
 /* Hyperwave Display */
 @font-face {
   font-family: 'Hyperwave Display';
-  src: url('/fonts/Hyperwave Display.otf') format('opentype');
+  src: url('./assets/fonts/Hyperwave Display.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }

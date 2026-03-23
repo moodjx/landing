@@ -17,7 +17,7 @@
 
   import { onMount } from "svelte";
   import { translations } from "../../lib/translations.js";
-  import { scrollToSection } from "../../lib/utils.js";
+  import { getAssetPath } from "../../lib/utils.js";
 
   import ParticleBackground from "../common/ParticleBackground.svelte";
 
@@ -195,12 +195,15 @@
       <!-- Call-to-action buttons -->
       <div class="hero-actions">
         <button
-          onclick={() => scrollToSection("contact")}
+          onclick={() =>
+            window.dispatchEvent(
+              new CustomEvent("navigate", { detail: "contact" }),
+            )}
           class="btn btn-contact">{translations[currentLang].hero.cta}</button
         >
         <div class="resume-wrapper">
           <a
-            href="/docs/resume_nocontact.pdf"
+            href={getAssetPath("/docs/resume_mohamedjridi_wlinks.pdf")}
             target="_blank"
             rel="noopener noreferrer"
             class="btn btn-resume-hero"
@@ -222,7 +225,11 @@
             </svg>
             {translations[currentLang].hero.resume}
           </a>
-          <img src="/icons/docs.png" alt="" class="resume-ribbon" />
+          <img
+            src={getAssetPath("/icons/docs.png")}
+            alt=""
+            class="resume-ribbon"
+          />
         </div>
       </div>
     </div>

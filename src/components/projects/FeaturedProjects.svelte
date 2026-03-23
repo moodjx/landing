@@ -23,6 +23,7 @@
   import { translations } from "../../lib/translations.js";
   import { GitHubIcon } from "../../lib/icons.js";
   import DecorativeShape from "../common/DecorativeShape.svelte";
+  import { getAssetPath } from "../../lib/utils.js";
 
   let { currentLang = "en" } = $props();
 </script>
@@ -39,7 +40,11 @@
   <DecorativeShape variant="orange" className="shape-orange" />
 
   <!-- New Vertical Decoration -->
-  <img src="/vectors/verticle-xs.svg" alt="" class="decorative-vertical" />
+  <img
+    src={getAssetPath("/vectors/verticle-xs.svg")}
+    alt=""
+    class="decorative-vertical"
+  />
 
   <div class="container">
     <!-- Section title -->

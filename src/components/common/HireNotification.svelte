@@ -23,7 +23,7 @@
   import { onMount } from "svelte";
   import { SOCIAL_LINKS } from "../../lib/constants.js";
   import { GitHubIcon, LinkedInIcon, TwitterIcon } from "../../lib/icons.js";
-  import { scrollToSection } from "../../lib/utils.js";
+  import { scrollToSection, getAssetPath } from "../../lib/utils.js";
 
   // ============================================================================
   // PROPS
@@ -204,7 +204,7 @@
       <div class="image-section">
         <div class="image-container">
           <img
-            src="/img/mypic_nanobanana.jpeg"
+            src={getAssetPath("/img/mypic_nanobanana.jpeg")}
             alt="Mohamed Jridi"
             class="profile-pic"
           />

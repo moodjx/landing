@@ -6,6 +6,7 @@
      */
 
     import { translations } from "../../lib/translations.js";
+    import { getAssetPath } from "../../lib/utils.js";
 
     let { visible = false, currentLang = "en" } = $props();
 </script>
@@ -17,7 +18,7 @@
             <div class="quality-title-col">
                 <div class="title-wrapper">
                     <img
-                        src="/img/mypic_nanobanana.jpeg"
+                        src={getAssetPath("/img/mypic_nanobanana.jpeg")}
                         alt="Profile"
                         class="profile-pic"
                     />

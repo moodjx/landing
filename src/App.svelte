@@ -23,7 +23,7 @@
 
   import { FEATURES } from "./lib/constants.js";
 
-  const BASE_PATH = "";
+  const BASE_PATH = import.meta.env.BASE_URL.replace(/\/$/, "");
 
   // ============================================================================
   // STATE
